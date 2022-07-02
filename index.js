@@ -22,8 +22,10 @@ const typeDefs = gql`
 const resolvers = {
     Query: {
         async getPosts() {
+            console.log('post got')
             try {
                 const posts = await Post.find();
+                 console.log('post found')
                 return posts;
             } catch (err) {
                 throw new Error(err);
